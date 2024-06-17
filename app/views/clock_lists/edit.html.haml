@@ -1,0 +1,5 @@
+.mx-auto.w-full{:class => "md:w-2/3"}
+  %h1.font-bold.text-4xl Editing clock list
+  = render "form", clock_list: @clock_list
+  = link_to "Show this clock list", @clock_list, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"
+  = link_to "Back to clock lists", clock_lists_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium"

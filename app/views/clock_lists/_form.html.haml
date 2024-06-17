@@ -1,0 +1,11 @@
+= form_with(model: clock_list, class: "contents") do |form|
+  - if clock_list.errors.any?
+    #error_explanation.bg-red-50.text-red-500.px-3.py-2.font-medium.rounded-lg.mt-3
+      %h2
+        = pluralize(clock_list.errors.count, "error")
+        prohibited this clock_list from being saved:
+      %ul
+        - clock_list.errors.each do |error|
+          %li= error.full_message
+  .inline
+    = form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
