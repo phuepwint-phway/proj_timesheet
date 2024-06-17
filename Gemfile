@@ -32,6 +32,10 @@ gem 'haml'
 
 gem "html2haml"
 
+gem 'devise', '~> 4.9.2'
+
+gem "tailwindcss-rails", "~> 2.6"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -72,5 +76,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# gem "tailwindcss-rails", "~> 2.6"
-# gem "haml"
