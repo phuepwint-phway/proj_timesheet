@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :consumers
-    resources :consumers
-    root 'consumers#index'
-    get 'pages/index'
-  resources :users
+  # Defines the root path route ("/")
+  root 'consumers#index'
+
+  devise_for :consumers, controllers: {
+    registrations: 'consumers/registrations',
+    sessions: 'consumers/sessions',
+    passwords: 'consumers/passwords',
+    confirmations: 'consumer/confirmations',
+    unlocks: 'consumer/unlocks'
+    # omniauth_callbacks: 'consumer/omniauth_callbacks'
+  }
+
+  # Custom routes for additional consumer actions
+  resources :consumers
+   
+    
   resources :clock_lists
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,6 +22,6 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
+
 
 end
