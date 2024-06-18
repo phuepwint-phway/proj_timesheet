@@ -13,10 +13,10 @@
       %tbody
         - @consumers.each do |consumer|
           %tr
-            %td #{consumer.id}
-            %td #{consumer.name}
-            %td #{consumer.email}
-            %td #{consumer.role}
+            %td= consumer.id
+            %td= link_to #{consumer.name}, consumer_path(consumer)
+            %td= consumer.email
+            %td= consumer.role
     %br
     %br
     %br
