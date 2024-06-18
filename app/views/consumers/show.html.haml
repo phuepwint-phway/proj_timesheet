@@ -1,0 +1,11 @@
+%div
+  %h1 Consumer Details
+  %p
+    %strong Name:
+    = @consumer.name
+  %p
+    %strong Email:
+    = @consumer.email
+  %p
+    %strong Created At:
+    = @consumer.created_at.strftime('%B %d, %Y')
