@@ -32,7 +32,7 @@ gem 'haml'
 
 gem "html2haml"
 
-gem 'devise', '~> 4.9.2'
+gem 'devise'
 
 gem "tailwindcss-rails", "~> 2.6"
 

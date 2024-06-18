@@ -1,0 +1,6 @@
+- if consumer_signed_in?
+  %h1 Welcome Home, #{current_consumer.email}
+  = link_to 'Sign out', destroy_consumer_session_path, data: { turbo_method: :delete }
+- else
+  = link_to 'Sign in', new_consumer_session_path
+

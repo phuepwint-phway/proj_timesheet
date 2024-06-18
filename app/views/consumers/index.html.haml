@@ -1,0 +1,27 @@
+- if consumer_signed_in?
+  %div
+    %h1 Consumers
+    = link_to 'New Consumer ', new_consumer_path
+    %br
+    %table{:class => "table-fixed"}
+      %thead
+        %tr
+          %td id
+          %td name
+          %td email
+          %td role
+      %tbody
+        - @consumers.each do |consumer|
+          %tr
+            %td #{consumer.id}
+            %td #{consumer.name}
+            %td #{consumer.email}
+            %td #{consumer.role}
+    %br
+    %br
+    %br
+  = link_to 'Log out', destroy_consumer_session_path, data: { turbo_method: :delete}
+- else
+  = link_to 'Sign in', new_consumer_registration_path
+  %p or
+  = link_to 'Log in', new_consumer_session_path

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-    root "users#index"
+  devise_for :consumers
+    resources :consumers
+    root 'consumers#index'
+    get 'pages/index'
   resources :users
   resources :clock_lists
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
